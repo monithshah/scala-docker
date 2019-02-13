@@ -17,10 +17,6 @@ RUN chmod +x /etc/profile.d/maven.sh
 
 RUN /bin/bash -c "source /etc/profile.d/maven.sh"
 
-RUN apt install scala -y
+RUN apt install scala python-pip -y
 
-RUN git clone https://github.com/mdthecool/TH.git
-
-WORKDIR TH
-
-RUN mvn clean install
+RUN pip install pyspark
